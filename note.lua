@@ -1,6 +1,6 @@
 --[[
-BY : KENAE
-Channel Files : https://t.me/KENAE
+BY : KENAE.git
+Channel Files : https://t.me/KENAE.git
 ]]
 
 local function keko_tshake(data)
@@ -37,17 +37,17 @@ function is_mod(msg)
 user_id = msg.sender_user_id_
 chat_id = msg.chat_id_
 local var = false
-local mod = database:sismember('tshake:'..bot_id..'mods:'..chat_id, user_id)
-local admin = database:sismember('tshake:'..bot_id..'admins:', user_id)
-local owner = database:sismember('tshake:'..bot_id..'owners:'..chat_id, user_id)
-local creator = database:sismember('tshake:'..bot_id..'creator:'..chat_id, user_id)
+local mod = database:sismember('KENAE:'..bot_id..'mods:'..chat_id, user_id)
+local admin = database:sismember('KENAE:'..bot_id..'admins:', user_id)
+local owner = database:sismember('KENAE:'..bot_id..'owners:'..chat_id, user_id)
+local creator = database:sismember('KENAE:'..bot_id..'creator:'..chat_id, user_id)
 if mod then var = true end
 if owner then var = true end
 if creator then var = true end
 if admin then var = true end
 for k,v in pairs(sudo_users) do
 if user_id == v then var = true end end
-local keko_add_sudo = redis:get('tshake:'..bot_id..'sudoo'..user_id..'')
+local keko_add_sudo = redis:get('KENAE:'..bot_id..'sudoo'..user_id..'')
 if keko_add_sudo then var = true end
 return var
 end
@@ -56,11 +56,11 @@ function is_vip(msg)
 user_id = msg.sender_user_id_
 chat_id = msg.chat_id_
 local var = false
-local mod = database:sismember('tshake:'..bot_id..'mods:'..chat_id, user_id)
-local admin = database:sismember('tshake:'..bot_id..'admins:', user_id)
-local owner = database:sismember('tshake:'..bot_id..'owners:'..chat_id, user_id)
-local creator = database:sismember('tshake:'..bot_id..'creator:'..chat_id, user_id)
-local vip = database:sismember('tshake:'..bot_id..'vipgp:'..chat_id, user_id)
+local mod = database:sismember('KENAE:'..bot_id..'mods:'..chat_id, user_id)
+local admin = database:sismember('KENAE:'..bot_id..'admins:', user_id)
+local owner = database:sismember('KENAE:'..bot_id..'owners:'..chat_id, user_id)
+local creator = database:sismember('KENAE:'..bot_id..'creator:'..chat_id, user_id)
+local vip = database:sismember('KENAE:'..bot_id..'vipgp:'..chat_id, user_id)
 if mod then var = true end
 if owner then var = true end
 if creator then var = true end
@@ -69,17 +69,17 @@ if vip then var = true end
 for k,v in pairs(sudo_users) do
 if user_id == v then
 var = true end end
-local keko_add_sudo = redis:get('tshake:'..bot_id..'sudoo'..user_id..'')
+local keko_add_sudo = redis:get('KENAE:'..bot_id..'sudoo'..user_id..'')
 if keko_add_sudo then var = true end
 return var end
 
 function ck_mod(user_id,chat_id)
 local var = false
-local mod = database:sismember('tshake:'..bot_id..'mods:'..chat_id, user_id)  
-local admin = database:sismember('tshake:'..bot_id..'admins:', user_id)  
-local owner = database:sismember('tshake:'..bot_id..'owners:'..chat_id, user_id)
-local creator = database:sismember('tshake:'..bot_id..'creator:'..chat_id, user_id)  
-local vip = database:sismember('tshake:'..bot_id..'vipgp:'..chat_id, user_id)
+local mod = database:sismember('KENAE:'..bot_id..'mods:'..chat_id, user_id)  
+local admin = database:sismember('KENAE:'..bot_id..'admins:', user_id)  
+local owner = database:sismember('KENAE:'..bot_id..'owners:'..chat_id, user_id)
+local creator = database:sismember('KENAE:'..bot_id..'creator:'..chat_id, user_id)  
+local vip = database:sismember('KENAE:'..bot_id..'vipgp:'..chat_id, user_id)
 if mod then var = true end
 if owner then var = true end
 if creator then var = true end
@@ -87,7 +87,7 @@ if admin then var = true end
 if vip then var = true end
 for k,v in pairs(sudo_users) do
 if user_id == v then var = true end end
-local keko_add_sudo = redis:get('tshake:'..bot_id..'sudoo'..user_id..'')
+local keko_add_sudo = redis:get('KENAE:'..bot_id..'sudoo'..user_id..'')
 if keko_add_sudo then var = true end
 return var
 end
@@ -109,10 +109,10 @@ end
 if (not is_mod(msg) and not is_vip(msg)) then
 local text = msg.content_.text_
 if text and (text:match("[Hh][Tt][Tt][Pp][Ss]://") or text:match("[Hh][Tt][Tt][Pp]://") or text:match(".[Ii][Rr]") or text:match(".[Cc][Oo][Mm]") or text:match(".[Oo][Rr][Gg]") or text:match(".[Ii][Nn][Ff][Oo]") or text:match("[Ww][Ww][Ww].") or text:match(".[Tt][Kk]")) then
-if database:get("lock_link.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_link.note:KENAE"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+HTTPS.request("KENAE://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
+database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.caption_ then
@@ -139,21 +139,21 @@ end
 if text and text:match("(.*)(@)(.*)")  then
 if database:get("lock_username.note:KENAE"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
 database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if database:get("lock_chat.note:KENAE"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
 database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 if text and text:match("(.*)(/)(.*)")  then
 if database:get("lock_sarha.note:KENAE"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
 database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
@@ -161,7 +161,7 @@ end
 if text and text:match("(.*)(#)(.*)")  then
 if database:get("lock_tag.note:KENAE"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
 database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
@@ -286,11 +286,11 @@ end
 end
  if text then 
   if  text:match("^المقيدين$") and is_mod(msg) then
-  local hash =   'tshake:'..bot_id..'res:'..msg.chat_id_
+  local hash =   'KENAE:'..bot_id..'res:'..msg.chat_id_
     local list = database:smembers(hash)
     text = "👥┇قائمة المقيدين ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
     for k,v in pairs(list) do
-    local user_info = database:hgetall('tshake'..bot_id.."user:"..v)
+    local user_info = database:hgetall('KENAE'..bot_id.."user:"..v)
   if user_info and user_info.username then
   local username = user_info.username
   text = text.."*|"..k.."|*~⪼(@"..username..")\n"
@@ -329,7 +329,7 @@ if value == "prore" then
 function get_tshakeX(tshakex1,tshakex2,tshakex3)
 local id_tshakex = tshakex2.sender_user_id_
 function keko333(extra,result,success)
-info = '👤┇العضو ~⪼ ['..result.first_name_..'](t.me/'..(result.username_ or 'tshaketeam')..')\n'..text
+info = '👤┇العضو ~⪼ ['..result.first_name_..'](t.me/'..(result.username_ or 'KENAEteam')..')\n'..text
 send(msg.chat_id_, msg.id_, 1,info, 1, 'md')
  end
 getUser(id_tshakex, keko333)
@@ -338,7 +338,7 @@ getMessage(msg.chat_id_, msg.reply_to_message_id_,get_tshakeX)
 end
 if value ~= "prore" and value~= "lock"  then
 function keko333(extra,result,success)
-info = '👤┇العضو ~⪼ ['..(result.first_name_ or value)..'](t.me/'..(result.username_ or 'tshaketeam')..')\n'..text
+info = '👤┇العضو ~⪼ ['..(result.first_name_ or value)..'](t.me/'..(result.username_ or 'KENAEteam')..')\n'..text
 send(msg.chat_id_, msg.id_, 1,info, 1, 'md')
 end
 getUser(value, keko333)
@@ -386,7 +386,7 @@ if ck_mod(result.sender_user_id_, msg.chat_id_) then
   send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع تقييد \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
   else
   HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. res[2] .. "")
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, res[2])
+  database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, res[2])
   tsX000(res[2],msg,"☑️┇تم تقييده")
   end
   end
