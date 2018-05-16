@@ -3,7 +3,7 @@ BY : KENAE.git
 Channel Files : https://t.me/KENAE
 ]]
 
-local function keko_tshake(data)
+local function keko_KENAE(data)
     JSON = (loadfile  "./libs/dkjson.lua")()
     local msg = data.message_
     URL = require('socket.url')
