@@ -147,7 +147,7 @@ while(true) do
 while true ; do
 
 curl "https://api.telegram.org/bot"$token"/sendmessage" -F
-./TG -s ./KEEPER.lua $@ --bot=$token
+./TG -s ./KENAE.lua $@ --bot=$token
 
 sleep 5
 done
@@ -424,7 +424,7 @@ print("\27[0;35m>>"..[[
 القيصر علي 
 WRITING THE SOURCE BY : @DKBSSK
 CH SOURCE : @DKBSSK 
-- القير علي = @Ail_Jassim
+- القير علي = @RANCOAR
 
 ]].."\n\027[00m")
       
