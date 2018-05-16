@@ -5,9 +5,9 @@
 | . \  | |___  | |___  |  __/  | |___  |  _ <
 |_|\_\ |_____| |_____| |_|     |_____| |_| \_\
 تم كتابه وبرمجة السورس بوسطه المطور 
-القيصر كرار 
-WRITING THE SOURCE BY : @LLX8XLL
-CH SOURCE : @KEEPER_CH
+القيصر علي 
+WRITING THE SOURCE BY : @DKBSSK
+CH SOURCE : @DKBSSK
 
 ]]--
 local Ayatol_Korsi = "karrar alqaser develop source Keeper language lua "
@@ -421,10 +421,10 @@ print("\27[0;31m>>"..[[
 ]].."\n\027[00m")
 print("\27[0;35m>>"..[[
 تم كتابه السورس بوسطه المطور 
-القيصر كرار 
-WRITING THE SOURCE BY : @LLX8XLL
-CH SOURCE : @KEEPER_CH 
-- عمر السراي = @blcon
+القيصر علي 
+WRITING THE SOURCE BY : @DKBSSK
+CH SOURCE : @DKBSSK 
+- القير علي = @Ail_Jassim
 
 ]].."\n\027[00m")
       
