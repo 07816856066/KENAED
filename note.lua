@@ -1,6 +1,6 @@
 --[[
 BY : KENAE.git
-Channel Files : https://t.me/KENAE.git
+Channel Files : https://t.me/KENAE
 ]]
 
 local function keko_tshake(data)
