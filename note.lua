@@ -371,7 +371,7 @@ if ck_mod(result.sender_user_id_, msg.chat_id_) then
   else
   HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.id_ .. "")
   database:sadd('KENAE:'..bot_id..'res:'..msg.chat_id_, result.id_)
-  texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(res[2] or 'tshaketeam')..')\n☑️┇تم تقييده'
+  texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(res[2] or 'KENAE')..')\n☑️┇تم تقييده'
   end
   else
   texts = '✖️┇خطاء'
@@ -410,7 +410,7 @@ if ck_mod(result.sender_user_id_, msg.chat_id_) then
   if result.id_ then
   HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
   database:srem(hash, result.id_)
-  texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(res[2] or 'tshaketeam')..')\n☑️┇تم الغاء تقييده'
+  texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(res[2] or 'KENAE')..')\n☑️┇تم الغاء تقييده'
   else
   texts = '✖️┇خطاء'
   end
