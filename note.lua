@@ -1,5 +1,5 @@
 --[[
-BY : TshAkETEAM
+BY :KENAETEAM
 Channel Files : https://t.me/tshakeFiles
 ]]
 
@@ -963,17 +963,16 @@ end
   🚹┇المقيدين
   🚹┇مسح المقيدين
   ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-  📡┇Ch ~⪼ @TshakeTeam
+  📡┇Ch ~⪼ @DKBSSK
 ]]
   send(msg.chat_id_, msg.id_, 1, (hres or text), 1, 'md')
      end
-
 end
 return {
     keko_tshake = keko_tshake,
 }
 --[[
- BY : TshAkETEAM
+ BY : KENAETEAM
  Channel Files : https://t.me/tshakeFiles
 ]]
     
