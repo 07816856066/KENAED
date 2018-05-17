@@ -139,7 +139,7 @@ end
   end
   create_config_auto()
   
-file = io.open("keeper", "w")
+file = io.open("Keane", "w")
 file:write([[
 token="]]..Token_..[["
  COUNTER=1
@@ -157,7 +157,7 @@ done
 ]])
 file:close()
 sleep(1)
-os.execute(' screen -S keeper ./keeper')
+os.execute(' screen -S Keane ./Keane')
 end
 local serialize_to_file = function(data, file, uglify)
   file = io.open(file, "w+")
@@ -10921,7 +10921,7 @@ end end
 
 🔰┊السورس من تطوير✔️
 
-[👷┊القيصر : keePer](T.ME/RANCOAR)
+[👷┊القيصر : Keane](T.ME/RANCOAR)
 [🔎┊بوت تواصل الفريق](T.ME/KENAEbot)
 
 [💲┊ قناٌة السوٰٰرسٰ](T.ME/DKBSSK) 
@@ -11209,7 +11209,7 @@ if text:match("^م7$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^help$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
    
    local text = [[
- *Hello in source KENAE*🏌️
+ *Hello in source Keane*🏌️
 ━─────────━
 اوامر اللغه الانكليزيه هي:
 🔸 *aa* : لعرض اوامر الحمايه
@@ -11227,7 +11227,7 @@ if text:match("^help$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
   if text:match("^a2$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
    
    local text = [[
- *Hello in source KENAE*🏌️
+ *Hello in source Keane*🏌️
 ━─────────━
 اوامر الحظر :
 
@@ -11254,7 +11254,7 @@ if text:match("^help$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
 				 if text:match("^aa$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
    
    local text = [[
- *Hello in source KENAE*🏌️
+ *Hello in source Keane*🏌️
 ━─────────━
 اوامر الحمايه [antispam] :
 استخدم *lock* + الامر للقفل or
@@ -11298,7 +11298,7 @@ if text:match("^help$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
  if text:match("^a3$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
    
    local text = [[
- *Hello in source KENAE*🏌️
+ *Hello in source Keane*🏌️
 ━─────────━
 اوامر الاخرى : 
 
@@ -11337,7 +11337,7 @@ if text:match("^help$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
   if text:match("^a1$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
    
    local text = [[
- *Hello in source KENAE*🏌️
+ *Hello in source Keane*🏌️
 ━─────────━
 اوامر  الرفع :
 ✪ setowner : رفع مدير 
