@@ -5,7 +5,7 @@
 | . \  | |___  | |___  |  __/  | |___  |  _ <
 |_|\_\ |_____| |_____| |_|     |_____| |_| \_\
 تم كتابه وبرمجة السورس بوسطه المطور 
-القيصر علي 
+ علي 
 WRITING THE SOURCE BY : @DKBSSK
 CH SOURCE : @DKBSSK
 
@@ -147,7 +147,7 @@ while(true) do
 while true ; do
 
 curl "https://api.telegram.org/bot"$token"/sendmessage" -F
-./TG -s ./KENAE.lua $@ --bot=$token
+./TG -s ./Keane.lua $@ --bot=$token
 
 sleep 5
 done
@@ -421,7 +421,7 @@ print("\27[0;31m>>"..[[
 ]].."\n\027[00m")
 print("\27[0;35m>>"..[[
 تم كتابه السورس بوسطه المطور 
-القيصر علي 
+ علي 
 WRITING THE SOURCE BY : @DKBSSK
 CH SOURCE : @DKBSSK 
 - القير علي = @RANCOAR
@@ -1058,8 +1058,8 @@ local sendmen = function(chat_id, reply_to_message_id, text, offset, length, use
           length_ = length,
           user_id_ = userid
         }
-      }
     }
+      }
   }, dl_cb, nil)
 end
 local sendDocument = function(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, document, caption, cb, cmd)
@@ -1134,13 +1134,13 @@ end
 local pinmsg = function(channel_id, message_id, disable_notification)
   tdcli_function({
     ID = "PinChannelMessage",
-    channel_id_ = getChatId(channel_id).ID,
-    message_id_ = message_id,
-    disable_notification_ = disable_notification
   }, dl_cb, nil)
 end
 local unpinmsg = function(channel_id)
   tdcli_function({
+    channel_id_ = getChatId(channel_id).ID,
+    message_id_ = message_id,
+    disable_notification_ = disable_notification
     ID = "UnpinChannelMessage",
     channel_id_ = getChatId(channel_id).ID
   }, dl_cb, nil)
