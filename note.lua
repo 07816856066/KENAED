@@ -1,9 +1,9 @@
 --[[
-BY : TshAkETEAM
-Channel Files : https://t.me/tshakeFiles
+BY : KENAE/KENAE
+Channel Files : https://t.me/kenaeFiles
 ]]
 
-local function keko_tshake(data)
+local function keko_kenae(data)
     JSON = (loadfile  "./libs/dkjson.lua")()
     local msg = data.message_
     URL = require('socket.url')
@@ -37,17 +37,17 @@ function is_mod(msg)
 user_id = msg.sender_user_id_
 chat_id = msg.chat_id_
 local var = false
-local mod = database:sismember('tshake:'..bot_id..'mods:'..chat_id, user_id)
-local admin = database:sismember('tshake:'..bot_id..'admins:', user_id)
-local owner = database:sismember('tshake:'..bot_id..'owners:'..chat_id, user_id)
-local creator = database:sismember('tshake:'..bot_id..'creator:'..chat_id, user_id)
+local mod = database:sismember('kenae:'..bot_id..'mods:'..chat_id, user_id)
+local admin = database:sismember('kenae:'..bot_id..'admins:', user_id)
+local owner = database:sismember('kenae:'..bot_id..'owners:'..chat_id, user_id)
+local creator = database:sismember('kenae:'..bot_id..'creator:'..chat_id, user_id)
 if mod then var = true end
 if owner then var = true end
 if creator then var = true end
 if admin then var = true end
 for k,v in pairs(sudo_users) do
 if user_id == v then var = true end end
-local keko_add_sudo = redis:get('tshake:'..bot_id..'sudoo'..user_id..'')
+local keko_add_sudo = redis:get('kenae:'..bot_id..'sudoo'..user_id..'')
 if keko_add_sudo then var = true end
 return var
 end
@@ -56,10 +56,10 @@ function is_vip(msg)
 user_id = msg.sender_user_id_
 chat_id = msg.chat_id_
 local var = false
-local mod = database:sismember('tshake:'..bot_id..'mods:'..chat_id, user_id)
+local mod = database:sismember('kenae:'..bot_id..'mods:'..chat_id, user_id)
 local admin = database:sismember('tshake:'..bot_id..'admins:', user_id)
-local owner = database:sismember('tshake:'..bot_id..'owners:'..chat_id, user_id)
-local creator = database:sismember('tshake:'..bot_id..'creator:'..chat_id, user_id)
+local owner = database:sismember('kenae:'..bot_id..'owners:'..chat_id, user_id)
+local creator = database:sismember('kenae:'..bot_id..'creator:'..chat_id, user_id)
 local vip = database:sismember('tshake:'..bot_id..'vipgp:'..chat_id, user_id)
 if mod then var = true end
 if owner then var = true end
@@ -69,17 +69,17 @@ if vip then var = true end
 for k,v in pairs(sudo_users) do
 if user_id == v then
 var = true end end
-local keko_add_sudo = redis:get('tshake:'..bot_id..'sudoo'..user_id..'')
+local keko_add_sudo = redis:get('kenae:'..bot_id..'sudoo'..user_id..'')
 if keko_add_sudo then var = true end
 return var end
 
 function ck_mod(user_id,chat_id)
 local var = false
-local mod = database:sismember('tshake:'..bot_id..'mods:'..chat_id, user_id)  
-local admin = database:sismember('tshake:'..bot_id..'admins:', user_id)  
-local owner = database:sismember('tshake:'..bot_id..'owners:'..chat_id, user_id)
-local creator = database:sismember('tshake:'..bot_id..'creator:'..chat_id, user_id)  
-local vip = database:sismember('tshake:'..bot_id..'vipgp:'..chat_id, user_id)
+local mod = database:sismember('kenae:'..bot_id..'mods:'..chat_id, user_id)  
+local admin = database:sismember('kenae:'..bot_id..'admins:', user_id)  
+local owner = database:sismember('kenae:'..bot_id..'owners:'..chat_id, user_id)
+local creator = database:sismember('kenae:'..bot_id..'creator:'..chat_id, user_id)  
+local vip = database:sismember('kenae:'..bot_id..'vipgp:'..chat_id, user_id)
 if mod then var = true end
 if owner then var = true end
 if creator then var = true end
@@ -87,7 +87,7 @@ if admin then var = true end
 if vip then var = true end
 for k,v in pairs(sudo_users) do
 if user_id == v then var = true end end
-local keko_add_sudo = redis:get('tshake:'..bot_id..'sudoo'..user_id..'')
+local keko_add_sudo = redis:get('kenae:'..bot_id..'sudoo'..user_id..'')
 if keko_add_sudo then var = true end
 return var
 end
@@ -112,108 +112,108 @@ if text and (text:match("[Hh][Tt][Tt][Pp][Ss]://") or text:match("[Hh][Tt][Tt][P
 if database:get("lock_link.note:tshake"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.caption_ then
 text = msg.content_.caption_
 if text and (text:match("[Hh][Tt][Tt][Pp][Ss]://") or text:match("[Hh][Tt][Tt][Pp]://") or text:match(".[Ii][Rr]") or text:match(".[Cc][Oo][Mm]") or text:match(".[Oo][Rr][Gg]") or text:match(".[Ii][Nn][Ff][Oo]") or text:match("[Ww][Ww][Ww].") or text:match(".[Tt][Kk]")) then
-if database:get("lock_link.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_link.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 end
 if msg.content_.caption_ then
 text = msg.content_.caption_
 if text and text:match("(.*)(@)(.*)")  then
-if database:get("lock_username.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_username.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
   database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 end
 if text and text:match("(.*)(@)(.*)")  then
-if database:get("lock_username.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_username.note:kenae"..msg.chat_id_..bot_id) then
+delete_msg(msg.chat_id_,{[0] = msg.id_})
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+end
+end
+if database:get("lock_chat.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
   database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
-end
-end
-if database:get("lock_chat.note:tshake"..msg.chat_id_..bot_id) then
-delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
-HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 if text and text:match("(.*)(/)(.*)")  then
-if database:get("lock_sarha.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_sarha.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if text and text:match("(.*)(#)(.*)")  then
-if database:get("lock_tag.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_tag.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if text and text:match("(.*)(#)(.*)")  then
-if database:get("lock_tag.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_tag.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false")
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.forward_info_ then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
-if database:get("lock_fwd.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_fwd.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end 
 end
 end
 if msg.content_.ID == "MessageSticker" then
-if database:get("lock_stecker.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_stecker.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.ID == "MessageUnsupported" then
-if database:get("lock_note.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_note.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.ID == "MessagePhoto" then
 if database:get("lock_photo.note:tshake"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.ID == "MessageAudio" then
 if database:get("lock_audeo.note:tshake"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false")
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.ID == "MessageVoice" then
@@ -221,64 +221,64 @@ if database:get("lock_voice.note:tshake"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
   database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.ID == "MessageVideo" then
-if database:get("lock_video.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_video.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false")
 database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.ID == "MessageAnimation" then
-if database:get("lock_gif.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_gif.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.ID == "MessageContact" then
-if database:get("lock_contect.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_contect.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false")
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if text and text:match("[\216-\219][\128-\191]") then
-if database:get("lock_ar.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_ar.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.ID == "MessageDocument" then
 if database:get("lock_files.note:tshake"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if text and text:match("[ASDFGHJKLQWERTYUIOPZXCVBNMasdfghjklqwertyuiopzxcvbnm]") then
-if database:get("lock_en.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_en.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
-  database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+  database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 if msg.content_.entities_ then
 if msg.content_.entities_[0] then
 if msg.content_.entities_[0] and msg.content_.entities_[0].ID == "MessageEntityUrl" or msg.content_.entities_[0].ID == "MessageEntityTextUrl" then
-if database:get("lock_mark.note:tshake"..msg.chat_id_..bot_id) then
+if database:get("lock_mark.note:kenae"..msg.chat_id_..bot_id) then
 delete_msg(msg.chat_id_,{[0] = msg.id_})
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false") 
-database:sadd('tshake:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
+database:sadd('kenae:'..bot_id..'res:'..msg.chat_id_, msg.sender_user_id_)
 end
 end
 end
@@ -286,11 +286,11 @@ end
 end
  if text then 
   if  text:match("^المقيدين$") and is_mod(msg) then
-  local hash =   'tshake:'..bot_id..'res:'..msg.chat_id_
+  local hash =   'kenae:'..bot_id..'res:'..msg.chat_id_
     local list = database:smembers(hash)
     text = "👥┇قائمة المقيدين ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
     for k,v in pairs(list) do
-    local user_info = database:hgetall('tshake'..bot_id.."user:"..v)
+    local user_info = database:hgetall('kenae'..bot_id.."user:"..v)
   if user_info and user_info.username then
   local username = user_info.username
   text = text.."*|"..k.."|*~⪼(@"..username..")\n"
@@ -309,9 +309,9 @@ end
   end
 
   if  text:match("^مسح المقيدين$") and is_mod(msg) then
-  local hash =   'tshake:'..bot_id..'res:'..msg.chat_id_
+  local hash =   'kenae:'..bot_id..'res:'..msg.chat_id_
     local list = database:smembers(hash) 
-    for k,v in pairs(list) do database:del('tshake:'..bot_id..'res:'..msg.chat_id_) 
+    for k,v in pairs(list) do database:del('kenae:'..bot_id..'res:'..msg.chat_id_) 
 HTTPS.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. v .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 end
   send(msg.chat_id_, msg.id_, 1, '☑️┇تم مسح قائمه المقيدين', 1, 'md')
@@ -326,13 +326,13 @@ send(msg.chat_id_, msg.id_, 1,info, 1, 'md')
 getUser(msg.sender_user_id_, keko333)
 end
 if value == "prore" then
-function get_tshakeX(tshakex1,tshakex2,tshakex3)
-local id_tshakex = tshakex2.sender_user_id_
+function get_tshakeX(kenaex1,kenaex2,kenaex3)
+local id_tshakex = kenaex2.sender_user_id_
 function keko333(extra,result,success)
 info = '👤┇العضو ~⪼ ['..result.first_name_..'](t.me/'..(result.username_ or 'tshaketeam')..')\n'..text
 send(msg.chat_id_, msg.id_, 1,info, 1, 'md')
  end
-getUser(id_tshakex, keko333)
+getUser(id_kenaex, keko333)
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,get_tshakeX)
 end
@@ -347,7 +347,7 @@ end
   
   if text:match("^تقيد$")  and is_mod(msg) and msg.reply_to_message_id_ then
   function res_by_reply(extra, result, success)
-    local hash =  'tshake:'..bot_id..'res:'..msg.chat_id_
+    local hash =  'kenae:'..bot_id..'res:'..msg.chat_id_
 if ck_mod(result.sender_user_id_, msg.chat_id_) then
   send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع تقييد \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
   else
