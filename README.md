@@ -5,4 +5,4 @@
 <br> `redis-server`<br>
 <br>🌀¦ اترك الترمنال مفتوح وافتح ترمنال جديد وخلي<br>
 
-<br>` git clone https://github.com/KENAE/KENAE.git && cd KENAE && chmod +x keeper && ./keeper `<br>
+<br>` git clone https://github.com/KENAE/KENAE.git && cd KENAE && chmod +x Keane && ./Keane `<br>
