@@ -12,7 +12,7 @@
 <br> `redis-server`<br>
 <br>🌀¦ اترك الترمنال مفتوح وافتح ترمنال جديد وخلي<br>
 
-<br>` git clone https://github.com/KENAE/KENAE.git && cd Keane && chmod +x Keane && ./Keane `<br>
+<br>` git clone https://github.com/KENAE/KENAE.git && cd KENAE && chmod +x Keane && ./Keane `<br>
 
 # <p align="center">لتنصيبه بالأكواد 
 ## افتح ترمنال وخلي الكود بعد كل كود انتر
