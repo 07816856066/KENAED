@@ -12,18 +12,18 @@
 <br> `redis-server`<br>
 <br>🌀¦ اترك الترمنال مفتوح وافتح ترمنال جديد وخلي<br>
 
-<br>` git clone https://github.com/KENAE/KENAE.git && cd KENAE && chmod +x Keane && ./Keane `<br>
+<br>` git clone https://github.com/KENAE/KENAE.git && cd KENAE && chmod +x keeper && ./keeper `<br>
 
 # <p align="center">لتنصيبه بالأكواد 
 ## افتح ترمنال وخلي الكود بعد كل كود انتر
 
 -    `git clone https://github.com/KENAE/KENAE.git` 
 
--    `cd KENAE`
+-    `cd keeper`
 
 -    `chmod +x Keane`
 
--    `./Keane`
+-    `./keeper`
 
 # <p align="center"> بعد ما تخلص التنصيب 
 
@@ -34,7 +34,7 @@
 
 ##  يشتغل تلقائيا بعد ه سد الترمنال وافتح جديد وخلي
 
-##   `cd KENAE && screen ./Keane`
+##   `cd KENAE && screen ./keeper`
 
 ##  💬¦ البوت خالي من الحقوق
 
