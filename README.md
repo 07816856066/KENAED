@@ -19,7 +19,7 @@
 
 -    `git clone https://github.com/KENAE/KENAE.git` 
 
--    `cd Keane`
+-    `cd KENAE`
 
 -    `chmod +x Keane`
 
