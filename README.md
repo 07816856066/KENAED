@@ -1,5 +1,5 @@
 # <p align="center" style="color:#cb3349" > ســــــورس كيناي 🍃
-# <p align="center" style="color:#cb3349" > source keePer 🍃
+# <p align="center" style="color:#cb3349" > source Keane 🍃
  
 # <p align="center" style="color: #14635c;" > 📣اقــوى ســورس على التليـكرام
 
@@ -12,7 +12,7 @@
 <br> `redis-server`<br>
 <br>🌀¦ اترك الترمنال مفتوح وافتح ترمنال جديد وخلي<br>
 
-<br>` git clone https://github.com/KENAE/KENAE.git && cd KENAE && chmod +x keeper && ./keeper `<br>
+<br>` git clone https://github.com/KENAE/KENAE.git && cd KENAE && chmod +x Keane && ./Keane `<br>
 
 # <p align="center">لتنصيبه بالأكواد 
 ## افتح ترمنال وخلي الكود بعد كل كود انتر
@@ -21,9 +21,9 @@
 
 -    `cd KENAE`
 
--    `chmod +x keeper`
+-    `chmod +x Keane`
 
--    `./keeper`
+-    `./Keane`
 
 # <p align="center"> بعد ما تخلص التنصيب 
 
@@ -34,7 +34,7 @@
 
 ##  يشتغل تلقائيا بعد ه سد الترمنال وافتح جديد وخلي
 
-##   `cd KENAE && screen ./keeper`
+##   `cd KENAE && screen ./Keane`
 
 ##  💬¦ البوت خالي من الحقوق
 
@@ -45,7 +45,7 @@
 
 # <p align="center"> رابــط  دعــم السورس
 
-  # <p align="center">[📨اضغط هنا للدخول الى المجموعه](https://t.me/keeper_ch)
+  # <p align="center">[📨اضغط هنا للدخول الى المجموعه](https://t.me/Keane)
   
   [📨حسابــي](https://telegram.me/RANCOAR) <br>
   
