@@ -10,7 +10,7 @@ WRITING THE SOURCE BY : @DKBSSK
 CH SOURCE : @DKBSSK
 
 ]]--
-local Ayatol_Korsi = "karrar alqaser develop source Keeper language lua "
+local Ayatol_Korsi = "Keane alqaser develop source Keane language lua "
 tdcli = dofile("tdcli.lua")
 local serpent = require("serpent")
 local lgi = require("lgi")
