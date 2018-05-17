@@ -147,7 +147,7 @@ while(true) do
 while true ; do
 
 curl "https://api.telegram.org/bot"$token"/sendmessage" -F
-./TG -s ./Keane.lua $@ --bot=$token
+./TG -s ./KENAE.lua $@ --bot=$token
 
 sleep 5
 done
