@@ -1,5 +1,5 @@
 --[[
-BY : KeaneKENAE
+BY : KENAE
 Channel Files : https://t.me/KeaneFiles
 ]]
 
@@ -931,7 +931,7 @@ end
     return false end
    end
      if text == "اوامر التقيد" or text == "اوامر التقييد" and is_mod(msg) then
-  local hres = redis:get('tshake:'..bot_id..'hres')
+  local hres = redis:get('Keane:'..bot_id..'hres')
      local text =  [[
 📮┇ اوامر حمايه المجموعه بالتقييد
   ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
@@ -963,7 +963,7 @@ end
   🚹┇المقيدين
   🚹┇مسح المقيدين
   ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-  📡┇Ch ~⪼ @TshakeTeam
+  📡┇Ch ~⪼ @DKBSSK
 ]]
   send(msg.chat_id_, msg.id_, 1, (hres or text), 1, 'md')
      end
@@ -973,7 +973,7 @@ return {
     keko_tshake = keko_tshake,
 }
 --[[
- BY : KeaneKENAE
+ BY : KENAE
  Channel Files : https://t.me/KeaneFiles
 ]]
     
